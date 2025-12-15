@@ -14,7 +14,7 @@
       --card: #ffffff;
       --text-primary: #0f172a;
       --text-secondary: #64748b;
-      --accent: #0b4f6c; /* Ocean Blue (UMT theme) */
+      --accent: #0b4f6c; /* Deep Ocean Blue (UMT theme) */
       --border: #e2e8f0;
     }
 
@@ -50,6 +50,13 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    /* Hover zoom effect */
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
     }
 
     .card h2 {
@@ -63,10 +70,32 @@
       color: var(--text-secondary);
     }
 
-    /* Grid placement (Desktop) */
+    /* ===== Grid Placement ===== */
     .profile {
       grid-column: span 6;
       grid-row: span 2;
+
+      /* Background Image */
+      background-image: url("bg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      position: relative;
+      color: #ffffff;
+    }
+
+    .profile::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 79, 108, 0.65); /* Ocean blue overlay */
+      border-radius: 16px;
+    }
+
+    .profile > * {
+      position: relative;
+      z-index: 1;
     }
 
     .location {
@@ -74,6 +103,10 @@
     }
 
     .hobby {
+      grid-column: span 3;
+    }
+
+    .reflection {
       grid-column: span 3;
     }
 
@@ -93,7 +126,7 @@
       margin-top: 0.5rem;
       font-size: 0.95rem;
       font-weight: 500;
-      color: var(--accent);
+      color: #dbeafe;
     }
 
     .social-links {
@@ -106,16 +139,16 @@
     .social-links a {
       text-decoration: none;
       font-size: 0.85rem;
-      color: var(--accent);
-      border: 1px solid var(--accent);
+      color: #ffffff;
+      border: 1px solid #ffffff;
       padding: 0.35rem 0.85rem;
       border-radius: 999px;
       transition: all 0.2s ease;
     }
 
     .social-links a:hover {
-      background: var(--accent);
-      color: #ffffff;
+      background: #ffffff;
+      color: var(--accent);
     }
 
     ul {
@@ -129,7 +162,7 @@
       margin-bottom: 0.35rem;
     }
 
-    /* Responsive: Mobile */
+    /* ===== Responsive ===== */
     @media (max-width: 768px) {
       .container {
         grid-template-columns: 1fr;
@@ -138,6 +171,7 @@
       .profile,
       .location,
       .hobby,
+      .reflection,
       .subjects,
       .case-study,
       .playlist {
@@ -150,54 +184,72 @@
 
   <main class="container">
 
-    <!-- Card 1: Profile -->
+    <!-- Profile Card -->
     <section class="card profile">
       <div>
         <h2>NURNAJWA NATASYA BINTI SAIDI</h2>
         <p>Program: Science Agrotechnology</p>
         <p>Year: Year 1</p>
-        <p class="tagline">From land to the lab.</p>
+        <p class="tagline">From lab to the lab.</p>
       </div>
       <div class="social-links">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
-        <a href="#">UMT Portal</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">GitHub</a>
+        <a href="#" target="_blank">UMT Portal</a>
       </div>
     </section>
 
-    <!-- Card 2: Location -->
+    <!-- Location -->
     <section class="card location">
       <h2>Location</h2>
       <p>UMT, Kuala Nerus</p>
     </section>
 
-    <!-- Card 5: Hobby -->
+    <!-- Hobby -->
     <section class="card hobby">
       <h2>Hobby</h2>
-      <p>Evening walks at Pantai UMT</p>
+      <p>Sleep</p>
     </section>
 
-    <!-- Card 3: Subjects -->
+    <!-- Reflection -->
+    <section class="card reflection">
+      <h2>Why Food Tech Matters in Malaysia</h2>
+      <p>
+        Sustainable food security is crucial for our future. By optimizing local
+        processing methods, we can reduce waste and improve nutrition.
+      </p>
+    </section>
+
+    <!-- Subjects -->
     <section class="card subjects">
       <h2>Subjects</h2>
       <ul>
         <li>Soil Science</li>
-        <li>System Computer</li>
-        <li>Microbiology Agriculture</li>
+        <li>Microbiology</li>
+        <li>Excel</li>
+        <li>Lab Analysis</li>
       </ul>
     </section>
 
-    <!-- Card 4: Case Study -->
+    <!-- Case Study -->
     <section class="card case-study">
       <h2>Case Study</h2>
-      <p><strong>Soil Health Monitoring Using Technology</strong></p>
-      <p>Observing soil conditions and microbial activity.</p>
+      <p><strong>Starch Gelatinization in Local Kuih</strong></p>
+      <p>Analyzing texture profiles of Kuih Lapis.</p>
     </section>
 
-    <!-- Card 6: Playlist -->
+    <!-- Playlist -->
     <section class="card playlist">
       <h2>Study Playlist</h2>
-      <p>Music player placeholder — ideal for focused study and fieldwork reflection.</p>
+      <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/13CwOTXUgBugeBByE9oIWb"
+        width="100%"
+        height="352"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
     </section>
 
   </main>
