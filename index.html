@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Bento Grid</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #64748b;
+      --accent: #0b4f6c; /* Ocean Blue (UMT theme) */
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(120px, auto);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* Grid placement (Desktop) */
+    .profile {
+      grid-column: span 6;
+      grid-row: span 2;
+    }
+
+    .location {
+      grid-column: span 3;
+    }
+
+    .hobby {
+      grid-column: span 3;
+    }
+
+    .subjects {
+      grid-column: span 4;
+    }
+
+    .case-study {
+      grid-column: span 4;
+    }
+
+    .playlist {
+      grid-column: span 12;
+    }
+
+    .tagline {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .social-links {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+
+    /* Responsive: Mobile */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .profile,
+      .location,
+      .hobby,
+      .subjects,
+      .case-study,
+      .playlist {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+
+    <!-- Card 1: Profile -->
+    <section class="card profile">
+      <div>
+        <h2>NURNAJWA NATASYA BINTI SAIDI</h2>
+        <p>Program: Science Agrotechnology</p>
+        <p>Year: Year 1</p>
+        <p class="tagline">From land to the lab.</p>
+      </div>
+      <div class="social-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">UMT Portal</a>
+      </div>
+    </section>
+
+    <!-- Card 2: Location -->
+    <section class="card location">
+      <h2>Location</h2>
+      <p>UMT, Kuala Nerus</p>
+    </section>
+
+    <!-- Card 5: Hobby -->
+    <section class="card hobby">
+      <h2>Hobby</h2>
+      <p>Evening walks at Pantai UMT</p>
+    </section>
+
+    <!-- Card 3: Subjects -->
+    <section class="card subjects">
+      <h2>Subjects</h2>
+      <ul>
+        <li>Soil Science</li>
+        <li>System Computer</li>
+        <li>Microbiology Agriculture</li>
+      </ul>
+    </section>
+
+    <!-- Card 4: Case Study -->
+    <section class="card case-study">
+      <h2>Case Study</h2>
+      <p><strong>Soil Health Monitoring Using Technology</strong></p>
+      <p>Observing soil conditions and microbial activity.</p>
+    </section>
+
+    <!-- Card 6: Playlist -->
+    <section class="card playlist">
+      <h2>Study Playlist</h2>
+      <p>Music player placeholder — ideal for focused study and fieldwork reflection.</p>
+    </section>
+
+  </main>
+
+</body>
+</html>
