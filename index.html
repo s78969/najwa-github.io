@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Student Bento Grid</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
@@ -16,6 +15,7 @@
       --text-secondary: #64748b;
       --accent: #0b4f6c; /* Deep Ocean Blue (UMT theme) */
       --border: #e2e8f0;
+      --hover-accent: #156a8e;
     }
 
     * {
@@ -118,6 +118,28 @@
       grid-column: span 4;
     }
 
+    /* ===== Button Styling ===== */
+    .btn-app {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      background-color: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(11, 79, 108, 0.2);
+    }
+
+    .btn-app:hover {
+      background-color: var(--hover-accent);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(11, 79, 108, 0.3);
+    }
+
     .playlist {
       grid-column: span 12;
     }
@@ -184,7 +206,6 @@
 
   <main class="container">
 
-    <!-- Profile Card -->
     <section class="card profile">
       <div>
         <h2>NURNAJWA NATASYA BINTI SAIDI</h2>
@@ -199,19 +220,16 @@
       </div>
     </section>
 
-    <!-- Location -->
     <section class="card location">
       <h2>Location</h2>
       <p>UMT, Kuala Nerus</p>
     </section>
 
-    <!-- Hobby -->
     <section class="card hobby">
       <h2>Hobby</h2>
       <p>Sleep</p>
     </section>
 
-    <!-- Reflection -->
     <section class="card reflection">
       <h2>Why Food Tech Matters in Malaysia</h2>
       <p>
@@ -220,7 +238,6 @@
       </p>
     </section>
 
-    <!-- Subjects -->
     <section class="card subjects">
       <h2>Subjects</h2>
       <ul>
@@ -231,14 +248,17 @@
       </ul>
     </section>
 
-    <!-- Case Study -->
     <section class="card case-study">
-      <h2>Case Study</h2>
-      <p><strong>Starch Gelatinization in Local Kuih</strong></p>
-      <p>Analyzing texture profiles of Kuih Lapis.</p>
+      <div>
+        <h2>Case Study</h2>
+        <p><strong>Starch Gelatinization in Local Kuih</strong></p>
+        <p>Analyzing texture profiles of Kuih Lapis.</p>
+      </div>
+      <a href="https://s78969.github.io/focus-timer-app/app.html" target="_blank" class="btn-app">
+        Try My Focus Timer App
+      </a>
     </section>
 
-    <!-- Playlist -->
     <section class="card playlist">
       <h2>Study Playlist</h2>
       <iframe
